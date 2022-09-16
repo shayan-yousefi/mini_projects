@@ -1,0 +1,122 @@
+a {
+  text-decoration: none;
+}
+* {
+  font-family: IRANSansX;
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  height: 100vh;
+}
+.social_media_container {
+  list-style: none;
+  transform: translateY(50px);
+  opacity: 0;
+  pointer-events: none;
+  transition: all .3s;
+}
+.social_media_container.show{
+    opacity: 1;
+    transform: translateY(0);
+    pointer-events: all;
+}
+.social_media_container li a {
+  position: relative;
+  width: 79px;
+  height: 79px;
+  display: block;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin: 12px 0;
+  border-radius: 8px;
+}
+.social_media_container li a img {
+  width: 40px;
+}
+.social_media_container li a .tooltip {
+  position: absolute;
+  left: calc(79px + 20px);
+  width: max-content;
+  color: #fff;
+  font-weight: 600;
+  padding: 9px 33px;
+  border-radius: 6px;
+  transform: translateY(-30px);
+  transition: all 0.3s;
+  opacity: 0;
+}
+.social_media_container li a:hover .tooltip {
+    transform: translateY(0);
+    opacity: 1;
+  pointer-events: none;
+
+}
+.social_media_container li a .tooltip::before {
+  content: "";
+  width: 16px;
+  height: 16px;
+  display: block;
+  position: absolute;
+  left: -8px;
+  top: 50%;
+  transform: translateY(-50%) rotate(45deg);
+  border-radius: 0 0 0 3.5px;
+}
+.social_media_container li:nth-child(1) a .tooltip::before {
+    background-color: #FF2D2D;
+
+}
+.social_media_container li:nth-child(2) a .tooltip::before {
+    background-color: #C700D9;
+
+}
+.social_media_container li:nth-child(3) a .tooltip::before {
+    background-color: #40A800;
+
+}
+.social_media_container li:nth-child(4) a .tooltip::before {
+    background-color: #0047FF;
+
+}
+
+button{
+    border: none;
+    background-color: #BE00DD;
+    width: 105px;
+    height: 105px;
+    margin-top: 12px;
+    border-radius: 12px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    outline: 0;
+    cursor: pointer;
+    position: relative;
+    z-index: 2;
+    transition: all .3s;
+}
+button img{
+    width: 45px;
+}
+
+button.close .xmark{
+    display: block;
+}
+button.close .bars{
+    display: none;
+}
+button .xmark{
+    display: none;
+    width: 55px;
+}
+
+button.close{
+    transform: rotate(180deg);
+}
